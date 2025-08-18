@@ -18,7 +18,8 @@ export default function OrderSuccessPage() {
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-muted-foreground">
-            You will receive a confirmation email shortly with details about your order and instructions for uploading your files.
+            Your order is confirmed! Please send your audio files (preferably in a .zip file with all stems) to <a href="mailto:mixedbykeo@gmail.com" className="text-primary hover:underline">mixedbykeo@gmail.com</a>.
+            Ensure your files are clearly labeled and in a high-quality format (e.g., WAV, AIFF).
           </p>
           <Link href="/">
             <Button className="w-full" size="lg">
