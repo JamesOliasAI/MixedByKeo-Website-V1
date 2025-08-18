@@ -35,6 +35,22 @@ export const metadata = {
   title: "Mixed By Keo | Professional Mixing & Mastering Services",
   description: "Elevate your music with professional mixing and mastering services by Keo. Achieve clarity, depth, and industry-standard quality for your tracks. Specializing in hip-hop, R&B, and pop.",
   keywords: ["mixing engineer", "mastering engineer", "audio mixing", "audio mastering", "music production", "hip-hop mixing", "R&B mixing", "pop mixing", "online mixing and mastering", "professional audio services"],
+  icons: {
+    icon: '/mixedbykeo_favicon_K_pack/favicon.ico',
+    shortcut: '/mixedbykeo_favicon_K_pack/favicon.ico',
+    apple: '/mixedbykeo_favicon_K_pack/K_black_on_white_180.png',
+    other: [
+      {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/mixedbykeo_favicon_K_pack/K_black_on_white_192.png',
+      },
+      {
+        rel: 'mask-icon',
+        url: '/mixedbykeo_favicon_K_pack/K_black_transparent_512.png',
+        color: '#000000',
+      },
+    ],
+  },
   openGraph: {
     title: "Mixed By Keo | Professional Mixing & Mastering Services",
     description: "Elevate your music with professional mixing and mastering services by Keo. Achieve clarity, depth, and industry-standard quality for your tracks.",
