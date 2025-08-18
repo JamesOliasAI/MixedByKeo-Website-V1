@@ -14,25 +14,25 @@ export async function POST(req: Request) {
       return new NextResponse('Invalid email address provided.', { status: 400 })
     }
 
-    let serviceName: string
+    let productId: string
     let unitAmount: number
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = []
 
     switch (serviceType) {
       case 'mixing':
-        serviceName = 'Mixing Service'
+        productId = 'prod_StM47JWD7XNlpn'
         unitAmount = 8000 // £80.00 in pence
         break
       case 'mastering':
-        serviceName = 'Mastering Service'
+        productId = 'prod_StM5vzmHjAQzj9'
         unitAmount = 3000 // £30.00 in pence
         break
       case 'mix-master':
-        serviceName = 'Mix & Master Package'
+        productId = 'prod_StM6rxPbAtWt4n'
         unitAmount = 10000 // £100.00 in pence
         break
       case 'test':
-        serviceName = 'Test Service'
+        productId = 'prod_StM760xDuPUkij'
         unitAmount = 100 // £1.00 in pence for testing
         break
       default:
@@ -41,15 +41,12 @@ export async function POST(req: Request) {
 
     lineItems.push({
       price_data: {
-        currency: 'gbp', // Great British Pounds
-        product_data: {
-          name: serviceName,
-          description: `Project: ${projectName}, Artist: ${artistName}`,
-        },
+        currency: 'gbp',
+        product: productId,
         unit_amount: unitAmount,
       },
       quantity: 1,
-    });
+    })
 
     if (fastDelivery) {
       lineItems.push({
