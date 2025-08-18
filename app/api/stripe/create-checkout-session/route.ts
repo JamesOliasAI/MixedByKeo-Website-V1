@@ -17,19 +17,19 @@ export async function POST(req: Request) {
     let priceId: string
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = []
 
-    // Map service types to Stripe Price IDs
+    // Map service types to Stripe Price IDs from environment variables
     switch (serviceType) {
       case 'mixing':
-        priceId = 'price_1RxZMfBl3aOVbUWFZPLkwMku' // Corresponds to prod_StM47JWD7XNlpn
+        priceId = process.env.STRIPE_PRICE_ID_MIXING!
         break
       case 'mastering':
-        priceId = 'price_1RxZN8Bl3aOVbUWFGIfq8rhL' // Corresponds to prod_StM5vzmHjAQzj9
+        priceId = process.env.STRIPE_PRICE_ID_MASTERING!
         break
       case 'mix-master':
-        priceId = 'price_1RxZOBBl3aOVbUWFXgH0DcLu' // Corresponds to prod_StM6rxPbAtWt4n
+        priceId = process.env.STRIPE_PRICE_ID_MIX_MASTER!
         break
       case 'test':
-        priceId = 'price_1RxZOuBl3aOVbUWFjtODTmvJ' // Corresponds to prod_StM760xDuPUkij
+        priceId = process.env.STRIPE_PRICE_ID_TEST!
         break
       default:
         return new NextResponse('Invalid service type', { status: 400 })
