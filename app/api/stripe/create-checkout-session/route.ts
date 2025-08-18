@@ -14,37 +14,29 @@ export async function POST(req: Request) {
       return new NextResponse('Invalid email address provided.', { status: 400 })
     }
 
-    let productId: string
-    let unitAmount: number
+    let priceId: string
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = []
 
+    // Map service types to Stripe Price IDs
     switch (serviceType) {
       case 'mixing':
-        productId = 'prod_StM47JWD7XNlpn'
-        unitAmount = 8000 // £80.00 in pence
+        priceId = 'price_1RxZMfBl3aOVbUWFZPLkwMku' // Corresponds to prod_StM47JWD7XNlpn
         break
       case 'mastering':
-        productId = 'prod_StM5vzmHjAQzj9'
-        unitAmount = 3000 // £30.00 in pence
+        priceId = 'price_1RxZN8Bl3aOVbUWFGIfq8rhL' // Corresponds to prod_StM5vzmHjAQzj9
         break
       case 'mix-master':
-        productId = 'prod_StM6rxPbAtWt4n'
-        unitAmount = 10000 // £100.00 in pence
+        priceId = 'price_1RxZOBBl3aOVbUWFXgH0DcLu' // Corresponds to prod_StM6rxPbAtWt4n
         break
       case 'test':
-        productId = 'prod_StM760xDuPUkij'
-        unitAmount = 100 // £1.00 in pence for testing
+        priceId = 'price_1RxZOuBl3aOVbUWFjtODTmvJ' // Corresponds to prod_StM760xDuPUkij
         break
       default:
         return new NextResponse('Invalid service type', { status: 400 })
     }
 
     lineItems.push({
-      price_data: {
-        currency: 'gbp',
-        product: productId,
-        unit_amount: unitAmount,
-      },
+      price: priceId,
       quantity: 1,
     })
 
