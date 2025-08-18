@@ -27,10 +27,10 @@ async function getSpotifyAccessToken() {
 }
 
 export async function GET(
-  request: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
-  const { id } = params;
+  const id = params.id;
   
   if (!id) {
     return NextResponse.json(
