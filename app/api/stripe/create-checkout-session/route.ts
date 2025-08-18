@@ -9,6 +9,11 @@ export async function POST(req: Request) {
   try {
     const { serviceType, projectName, artistName, email, fastDelivery, acapellaExport } = await req.json()
 
+    // Basic email validation
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return new NextResponse('Invalid email address provided.', { status: 400 })
+    }
+
     let serviceName: string
     let unitAmount: number
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = []
