@@ -79,6 +79,7 @@ useEffect(() => {
               <a href="#discography" className="text-muted-foreground hover:text-foreground transition-colors">Portfolio</a>
               <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
               <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
+              <a href="https://www.youtube.com/channel/UC80lAJ1TKWyzvI0dxUShQmA" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
               <ThemeToggle />
             </div>
           </div>
