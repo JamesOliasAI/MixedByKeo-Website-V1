@@ -70,7 +70,7 @@ useEffect(() => {
       <header className="sticky-header bg-background/95 backdrop-blur-md border-b border-border">
         <nav className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-heading font-bold text-foreground">MixedByKeo</div>
+            <img src="/logo.png" alt="Mixed By Keo Logo" width="150" height="auto" className="h-8 w-auto" />
             <div className="hidden md:flex space-x-8 items-center">
               <a href="#hero" className="text-muted-foreground hover:text-foreground transition-colors">Home</a>
               <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
