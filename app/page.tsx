@@ -91,9 +91,11 @@ useEffect(() => {
         <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-20">
           <div className="max-w-4xl text-center">
             <div className="mb-8">
-              <img
-                src="/pfp.jpg"
-                alt="Mixed By Keo - Professional Audio Engineer for Mixing and Mastering"
+              <Image
+                src="/logo.png"
+                alt="Mixed By Keo Logo"
+                width={192}
+                height={192}
                 className="w-48 h-48 rounded-full mx-auto mb-6 object-cover border-4 border-primary/20 shadow-2xl"
               />
             </div>
