@@ -28,9 +28,6 @@ export async function POST(req: Request) {
       case 'mix-master':
         priceId = process.env.STRIPE_PRICE_ID_MIX_MASTER!
         break
-      case 'test':
-        priceId = process.env.STRIPE_PRICE_ID_TEST!
-        break
       default:
         return new NextResponse('Invalid service type', { status: 400 })
     }
