@@ -223,6 +223,31 @@ useEffect(() => {
                 </CardContent>
               </Card>
 
+              <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all hover:shadow-2xl hover:scale-105 border-primary/30">
+                <CardHeader>
+                  <Badge className="w-fit mb-2 bg-accent">Most Popular</Badge>
+                  <CardTitle className="flex items-center gap-2">
+                    <Award className="h-6 w-6 text-primary" />
+                    Mix & Master
+                  </CardTitle>
+                  <CardDescription>Complete production package</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-muted-foreground mb-6">
+                    <li>• Full mix & master of vocals & beat</li>
+                    <li>• Included is a WAV, MP3 Bounce</li>
+                    <li>• Optional ad ons such as: Acapella Export, Fast Delivery</li>
+                    <li>• Requires: Individual stems of vocal and/or beat tracks labelled correctly</li>
+                    <li>• Up to 1 free revision</li>
+                  </ul>
+                  <div className="text-2xl font-bold mb-4">
+                    £100<span className="text-sm font-normal text-muted-foreground">/song</span>
+                  </div>
+                  <Link href="/order">
+                    <Button className="w-full bg-accent hover:bg-accent/90">Order Package</Button>
+                  </Link>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
